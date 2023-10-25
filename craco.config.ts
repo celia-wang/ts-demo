@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const path = require("path");
 
 module.exports = {
@@ -12,7 +13,7 @@ module.exports = {
     },
     proxy: {
       "/api": {
-        target: "https://api.roborock.com",
+        target: "http://192.168.145.28:8001",
         pathRewrite: { "/api": "" },
         changeOrigin: true,
       },
@@ -31,5 +32,8 @@ module.exports = {
       "@": path.resolve(__dirname, "src"),
     },
   },
+  // include: [
+  //   "./commitlint.config.js", // 需要引入配置，否则报错
+  // ],
 };
 export {};
